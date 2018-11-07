@@ -4,13 +4,6 @@ import ButtonProjeto from './ButtonProjeto'
 import Header from './Header'
 
 export default class ListaProjetos extends Component {
-  
-  // renderButton(projeto){
-  //   console.log("call projeto", projeto)
-  //   return (
-  //     <ButtonProjeto nome={projeto.nome} id={projeto.id} />
-  //   )
-  // }
 
   _renderItem = ({item}) => {
     return (
@@ -23,20 +16,8 @@ export default class ListaProjetos extends Component {
 
   render() {
 
-    const projetos = [
-      {
-        id: 1,
-        nome: "Projeto 1"
-      },
-      {
-        id: 2,
-        nome: "Projeto 2"
-      },
-      {
-        id: 3,
-        nome: "Projeto 3"
-      }
-    ]
+    const {projetos} = this.props
+
     
     return (
       <View style={styles.container}>
