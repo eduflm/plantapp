@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Alert, Text, View, TouchableOpacity, StyleSheet } from 'react-native'
+import { createStackNavigator } from 'react-navigation'
 
 export default class ButtonProjeto extends Component {
   constructor(props){
@@ -9,17 +10,18 @@ export default class ButtonProjeto extends Component {
   }
 
   _onPressButton(){
-    Alert.alert("Você pressionou o botão do " + this.props.nome)
-    console.log("Pressionando o borão")
+    console.log("dsadsad")
+    console.log(this.props.id)
+    this.props.navigation.navigate('Projeto', { id: this.props.id, nome: this.props.nome})
   }
 
   render() {
     return (
       <View style={styles.container}>
         <TouchableOpacity
-          onPress={this._onPressButton}w
+          onPress={this._onPressButton}
           title={this.props.nome}
-          accessibilityLabel={"Botão do " + this.props.name}
+          accessibilityLabel={"Botão do " + this.props.nome}
         >
           <View style={styles.button}>
               <Text style={styles.buttonText}>{this.props.nome}</Text>
@@ -42,8 +44,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     height:70,
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start'
   },
   buttonText: {
     padding: 20,

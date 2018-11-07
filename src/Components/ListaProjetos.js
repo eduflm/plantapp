@@ -14,7 +14,7 @@ export default class ListaProjetos extends Component {
 
   _renderItem = ({item}) => {
     return (
-      <ButtonProjeto nome={item.nome} id={item.id} />
+      <ButtonProjeto nome={item.nome} id={item.id} navigation={this.props.navigation} />
     )
   };
 
@@ -40,7 +40,6 @@ export default class ListaProjetos extends Component {
     
     return (
       <View style={styles.container}>
-        <Header/>
         <FlatList
           data={projetos}
           keyExtractor={this._keyExtractor}
