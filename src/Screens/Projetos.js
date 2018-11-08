@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native'
+import {Platform, StyleSheet, Text, View, AsyncStorage} from 'react-native'
 import ListaProjetos from '../Components/ListaProjetos'
 import { FloatingAction } from 'react-native-floating-action';
 
@@ -14,37 +14,52 @@ export default class App extends Component<Props> {
     super(props)
 
     this.state = {
-      projetos: [
-        {
-          id: 1,
-          nome: "Projeto 10"
-        },
-        {
-          id: 2,
-          nome: "Projeto 6"
-        },
-        {
-          id: 3,
-          nome: "Projeto 4"
-        }
-      ]
+      projetos: []
     }
+
+    this._retrieveData = this._retrieveData.bind(this)
+
+    // this._retrieveData().then((resultado) => {
+    //   this.setState({projetos: resultado })
+    // })
   }
+
+  _retrieveData = async () => {
+    console.log("CHAMOUUUU!!!!!")
+    try {
+      const value = await AsyncStorage.getItem('Projetos');
+      if (value !== null) {
+        // We have data!!
+        console.log("deu bom")
+        console.log(value);
+        return value
+      } else {
+        console.log("sem valor")
+      }
+     } catch (error) {
+      console.log("deu ruim")
+       console.log(error)
+     }
+  }
+
+  // componentDidUpdate = () => {
+  //   this._retrieveData().then((resultado) => {
+  //     this.setState({projetos: resultado })
+  //   })
+  // }
+  
 
   render() {
 
-    const {projetos} = this.state
+    // const {projetos} = this.state
 
-    let novoProjeto = this.props.navigation.getParam('novoProjeto');
-    console.log(novoProjeto)
-    if (novoProjeto){
-      let projetos = this.state.projetos
-      projetos.push(novoProjeto)
-      this.setState({
-        projetos
-      })
-      novoProjeto = null
-    }
+    var projetos = []
+
+
+
+    this._retrieveData().then((resultado) => {
+      projetos = [resultado]
+    })
 
     const actions = [{
       text: 'Adicionar novo projeto',

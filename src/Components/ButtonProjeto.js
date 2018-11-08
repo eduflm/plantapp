@@ -10,8 +10,6 @@ export default class ButtonProjeto extends Component {
   }
 
   _onPressButton(){
-    console.log("dsadsad")
-    console.log(this.props.id)
     this.props.navigation.navigate('Projeto', { id: this.props.id, nome: this.props.nome})
   }
 

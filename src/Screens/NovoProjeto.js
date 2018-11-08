@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, Alert } from 'react-native'
+import { Text, View, StyleSheet, Alert, AsyncStorage } from 'react-native'
 import CustomInput from '../Components/CustomInput';
 import CustomButton from '../Components/CustomButtom';
 
@@ -17,25 +17,45 @@ export default class NovoProjeto extends Component {
     }
 
     this._onPressButton = this._onPressButton.bind(this)
+    this._storeData = this._storeData.bind(this)
+  }
+
+  _storeData = async (projeto) => {
+    try {
+      await AsyncStorage.setItem('Projetos', JSON.stringify(projeto));
+    } catch (error) {
+      console.log("deu ruim na hora de salvar")
+      console.log(error)
+      // Error saving data
+    }
   }
 
   _onPressButton(){
     const {nome,descricao} = this.state
-    // if (nome === ""){
-    //   Alert.alert(
-    //     'Nome vazio',
-    //     'O campo "nome do projeto" não pode estar vazio',
-    //   )
-    //   return
-    // }
+    if (nome === ""){
+      Alert.alert(
+        'Nome vazio',
+        'O campo "nome do projeto" não pode estar vazio',
+      )
+      return
+    }
 
-    // if (descricao === ""){
-    //   Alert.alert(
-    //     'Descrição vazia',
-    //     'O campo "Descrição do projeto" não pode estar vazio',
-    //   )
-    //   return
-    // }
+    if (descricao === ""){
+      Alert.alert(
+        'Descrição vazia',
+        'O campo "Descrição do projeto" não pode estar vazio',
+      )
+      return
+    }
+
+    novoProjeto = {
+      nome,
+      descricao,
+      pessoas: [],
+      plantas: []
+    }
+
+    this._storeData(novoProjeto)
     
     this.props.navigation.navigate('Projetos', {novoProjeto: {nome, descricao}})
   }
