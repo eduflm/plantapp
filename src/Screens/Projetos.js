@@ -17,27 +17,27 @@ export default class App extends Component<Props> {
       projetos: []
     }
 
-    this._retrieveData = this._retrieveData.bind(this)
+    this.renderProjetos  = this.renderProjetos .bind(this)
 
-    // this._retrieveData().then((resultado) => {
-    //   this.setState({projetos: resultado })
-    // })
+    AsyncStorage.getItem('Projetos').then((resultado) => {
+      let data = JSON.parse(resultado)
+      console.log(typeof(data))
+      let {projetos} = this.state
+      projetos.push(data)
+      this.setState({projetos})
+    });
   }
 
   _retrieveData = async () => {
-    console.log("CHAMOUUUU!!!!!")
     try {
       const value = await AsyncStorage.getItem('Projetos');
       if (value !== null) {
-        // We have data!!
-        console.log("deu bom")
-        console.log(value);
         return value
       } else {
         console.log("sem valor")
       }
      } catch (error) {
-      console.log("deu ruim")
+        console.log("deu ruim")
        console.log(error)
      }
   }
@@ -47,19 +47,33 @@ export default class App extends Component<Props> {
   //     this.setState({projetos: resultado })
   //   })
   // }
+
+  renderProjetos(){
+    let promise = new Promise((resolve, reject) => {
+      this._retrieveData().then((resultado) => {
+        resolve(resultado)
+      })
+    })
+
+    promise.then(() => {
+
+    })
+    // this._retrieveData().then((resultado) => {
+    //   var data = []
+    //   data.push(JSON.parse(resultado))
+    //   console.log("dsiadjksksksksksks")
+    //   console.log("3333")
+    //   return <Text>dsiadjoiajsd</Text>
+    //   // return <ListaProjetos navigation={this.props.navigation} projetos={data}/>
+    // })
+    // console.log("2222")
+    return <Text>dsiadjoiajsd</Text>
+  }
   
 
   render() {
-
-    // const {projetos} = this.state
-
-    var projetos = []
-
-
-
-    this._retrieveData().then((resultado) => {
-      projetos = [resultado]
-    })
+    
+    const {projetos} = this.state
 
     const actions = [{
       text: 'Adicionar novo projeto',
@@ -91,4 +105,5 @@ const styles = StyleSheet.create({
     flex: 1,
   }
 });
+
 

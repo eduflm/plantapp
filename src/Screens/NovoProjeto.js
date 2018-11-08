@@ -49,6 +49,7 @@ export default class NovoProjeto extends Component {
     }
 
     novoProjeto = {
+      id: "1ds",
       nome,
       descricao,
       pessoas: [],

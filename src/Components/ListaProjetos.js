@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, FlatList } from 'react-native'
 import ButtonProjeto from './ButtonProjeto'
-import Header from './Header'
 
 export default class ListaProjetos extends Component {
 
@@ -13,16 +12,22 @@ export default class ListaProjetos extends Component {
 
   _keyExtractor = (item, index) => item.id;
 
+  componentWillReceiveProps(){
+    console.log("recieve")
+    this.forceUpdate()
+  }
+
 
   render() {
 
     const {projetos} = this.props
 
-    
+    console.log("projetos: ", projetos)
+
     return (
       <View style={styles.container}>
         <FlatList
-          data={projetos}
+          extraData={projetos}
           keyExtractor={this._keyExtractor}
           renderItem={this._renderItem}
         />

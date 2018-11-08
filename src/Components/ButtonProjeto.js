@@ -5,7 +5,6 @@ import { createStackNavigator } from 'react-navigation'
 export default class ButtonProjeto extends Component {
   constructor(props){
     super(props);
-
     this._onPressButton = this._onPressButton.bind(this)
   }
 
