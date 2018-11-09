@@ -7,11 +7,13 @@ import { createStackNavigator } from 'react-navigation';
 import Projetos from './Screens/Projetos'
 import Projeto from './Screens/Projeto'
 import NovoProjeto from './Screens/NovoProjeto'
+import Planta from './Screens/Planta'
 
 const RootStack = createStackNavigator({
   Projetos: {screen: Projetos},
   Projeto: {screen: Projeto},
-  NovoProjeto: {screen: NovoProjeto}
+  NovoProjeto: {screen: NovoProjeto},
+  Planta: {screen: Planta}
 },{
     initialRouteName: 'Projetos',
     headerStyle: {

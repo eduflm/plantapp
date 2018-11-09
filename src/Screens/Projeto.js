@@ -60,7 +60,7 @@ export default class Projeto extends Component {
         </View>
         <View style={styles.content}>
           {option === 1 ? (
-            <PlantasProjeto plantas={plantas}/>
+            <PlantasProjeto plantas={plantas} navigation={this.props.navigation}/>
           ):(
             <ScrollView style={styles.container}>
               <DescricaoProjeto descricao={descricao}/>

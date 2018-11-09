@@ -30,19 +30,33 @@ export default class App extends Component<Props> {
               email: "ana@gmail.com",
               imagem: "https://st2.depositphotos.com/1035122/10611/i/950/depositphotos_106118560-stock-photo-brunette-woman-student-hold-pack.jpg"
             }
+          ],
+          plantas: [
+            {
+              nome: "Planta 1",
+              descricao: "Uma planta bem loca",
+              coletas: []
+            },
+            {
+              nome: "Planta 2",
+              descricao: "Uma planta mais loca ainda",
+              coletas: []
+            }
           ]
         },
         {
           id: 2,
           nome: "Projeto 6",
           descricao: "",
-          pessoas: []
+          pessoas: [],
+          plantas: []
         },
         {
           id: 3,
           nome: "Projeto 4",
           descricao: "",
-          pessoas: []
+          pessoas: [],
+          plantas: []
         }
       ]
     }
