@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View, StyleSheet, ScrollView } from 'react-native'
 import OptionsProjetoButton from '../Components/OptionsProjetoButton';
 import DescricaoProjeto from '../Components/DescricaoProjeto';
 import PessoasProjeto from '../Components/PessoasProjeto';
+import PlantasProjeto from '../Components/PlantasProjeto';
 
 
 export default class Projeto extends Component {
@@ -42,7 +43,9 @@ export default class Projeto extends Component {
   render() {
     const id = this.props.navigation.getParam('id');
     const nome = this.props.navigation.getParam('nome');
-
+    const descricao = this.props.navigation.getParam('descricao')
+    const pessoas = this.props.navigation.getParam('pessoas')
+    const plantas = this.props.navigation.getParam('plantas')
     const {option} = this.state
 
     return (
@@ -52,14 +55,17 @@ export default class Projeto extends Component {
             <OptionsProjetoButton nome="Descricao" option={0} onClick={this.onClickOption} activated={option === 0}/>
           </View>
           <View style={styles.containerBotao}>
-            <OptionsProjetoButton nome="Pessoas" option={1} onClick={this.onClickOption} activated={option === 1}/>
+            <OptionsProjetoButton nome="Plantas" option={1} onClick={this.onClickOption} activated={option === 1}/>
           </View>
         </View>
         <View style={styles.content}>
           {option === 1 ? (
-            <PessoasProjeto/>
+            <PlantasProjeto plantas={plantas}/>
           ):(
-            <DescricaoProjeto/>
+            <ScrollView style={styles.container}>
+              <DescricaoProjeto descricao={descricao}/>
+              <PessoasProjeto pessoas={pessoas}/>
+            </ScrollView>
           )}
         </View>
       </View>
@@ -72,12 +78,15 @@ const styles = StyleSheet.create({
     flex: 1
   },
   containerBotaos: {
-    flex: 1,
-    flexGrow: 1,
     flexDirection: 'row',
   },
   containerBotao: {
-    flex: 1
+    flex: 1,
+    maxHeight: 80
+  },
+  content: {
+    flex: 1,
+    margin: 20
   }
 });
 

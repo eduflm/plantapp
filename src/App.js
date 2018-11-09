@@ -4,7 +4,6 @@ import {Platform, StyleSheet, Text, View} from 'react-native'
 import ListaProjetos from './Components/ListaProjetos'
 import { createStackNavigator } from 'react-navigation';
 
-import Header from './Components/Header'
 import Projetos from './Screens/Projetos'
 import Projeto from './Screens/Projeto'
 import NovoProjeto from './Screens/NovoProjeto'

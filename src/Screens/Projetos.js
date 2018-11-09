@@ -17,15 +17,32 @@ export default class App extends Component<Props> {
       projetos: [
         {
           id: 1,
-          nome: "Projeto 10"
+          nome: "Projeto 10",
+          descricao: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas odio ex, sagittis id finibus ut, blandit eget ante. Suspendisse enim erat, imperdiet sit amet accumsan sit amet, malesuada eu felis. Proin imperdiet felis vel hendrerit sollicitudin. Ut et est a ipsum posuere vulputate non vel nunc. Cras rutrum metus neque, quis tincidunt arcu posuere eu. Duis laoreet sapien tellus, at aliquam orci pulvinar sed. Nullam vitae ligula semper sem hendrerit finibus. Integer rhoncus rhoncus libero, eget vulputate ex mattis at. Praesent et dui a dui lacinia congue a at eros. Aenean fringilla et lacus at aliquet",
+          pessoas: [
+            {
+              nome: "Bárbara Almeida",
+              email: "barbara@gmail.com",
+              imagem: "https://www.stanforddaily.com/wp-content/uploads/2015/11/NEW.111215.MargauxGiles.jpg"
+            },
+            {
+              nome: "Ana Barbosa",
+              email: "ana@gmail.com",
+              imagem: "https://st2.depositphotos.com/1035122/10611/i/950/depositphotos_106118560-stock-photo-brunette-woman-student-hold-pack.jpg"
+            }
+          ]
         },
         {
           id: 2,
-          nome: "Projeto 6"
+          nome: "Projeto 6",
+          descricao: "",
+          pessoas: []
         },
         {
           id: 3,
-          nome: "Projeto 4"
+          nome: "Projeto 4",
+          descricao: "",
+          pessoas: []
         }
       ]
     }
@@ -35,16 +52,16 @@ export default class App extends Component<Props> {
 
     const {projetos} = this.state
 
-    let novoProjeto = this.props.navigation.getParam('novoProjeto');
-    console.log(novoProjeto)
-    if (novoProjeto){
-      let projetos = this.state.projetos
-      projetos.push(novoProjeto)
-      this.setState({
-        projetos
-      })
-      novoProjeto = null
-    }
+    // let novoProjeto = this.props.navigation.getParam('novoProjeto');
+    // console.log(novoProjeto)
+    // if (novoProjeto){
+    //   let projetos = this.state.projetos
+    //   projetos.push(novoProjeto)
+    //   this.setState({
+    //     projetos
+    //   })
+    //   novoProjeto = null
+    // }
 
     const actions = [{
       text: 'Adicionar novo projeto',
