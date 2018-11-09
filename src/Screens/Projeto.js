@@ -49,10 +49,10 @@ export default class Projeto extends Component {
       <View style={styles.container}>
         <View style={styles.containerBotaos}>
           <View style={styles.containerBotao}>
-            <OptionsProjetoButton nome="Descricao" option={0} onClick={this.onClickOption}/>
+            <OptionsProjetoButton nome="Descricao" option={0} onClick={this.onClickOption} activated={option === 0}/>
           </View>
           <View style={styles.containerBotao}>
-            <OptionsProjetoButton nome="Pessoas" option={1} onClick={this.onClickOption}/>
+            <OptionsProjetoButton nome="Pessoas" option={1} onClick={this.onClickOption} activated={option === 1}/>
           </View>
         </View>
         <View style={styles.content}>
