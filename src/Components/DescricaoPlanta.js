@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View, StyleSheet, Image } from 'react-native'
 
 export default class DescricaoPlanta extends Component {
   render() {
@@ -18,6 +18,9 @@ export default class DescricaoPlanta extends Component {
           <Text style={styles.coleta}> Primeira coleta: {primeiraColeta} </Text>
           <Text style={styles.coleta}> Ultima coleta: {ultimaColeta} </Text>
         </View>
+        <View style={styles.mapContainer}>
+          <Image source={require('../Assets/map.png')} />
+        </View>
       </View>
     )
   }
@@ -32,6 +35,9 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     margin: 15
+  },
+  mapContainer: {
+    marginTop: 15 
   },
   descricao: {
     marginBottom: 20
