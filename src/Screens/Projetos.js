@@ -35,6 +35,9 @@ export default class App extends Component<Props> {
             {
               nome: "Planta 1",
               descricao: "Uma planta bem loca",
+              especie: "Uma espécie qualquer",
+              primeiraColeta: "30/10/2018",
+              ultimaColeta: "10/11/1997",
               coletas: []
             },
             {
