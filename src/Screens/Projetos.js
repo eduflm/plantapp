@@ -35,7 +35,31 @@ export default class App extends Component<Props> {
             {
               nome: "Planta 1",
               descricao: "Uma planta bem loca",
-              coletas: []
+              especie: "Uma espécie qualquer",
+              primeiraColeta: "30/10/2018",
+              ultimaColeta: "10/11/1997",
+              coletas: [
+                {
+                  titulo: "Coleta 1",
+                  dados: "dados dados dados dados dados dados dados dados dados dados dados dados dados dados dados dados dados dados ",
+                  dataColeta: "10/11/2018",
+                },
+                {
+                  titulo: "Coleta 2",
+                  dados: "dados2 dados2 dados2 dados2 dados2 dados2 ",
+                  dataColeta: "10/11/2018",
+                },
+                {
+                  titulo: "Coleta 3",
+                  dados: "dados3 dados3 dados3 dados3 dados3 dados3 ",
+                  dataColeta: "10/11/2018",
+                },
+                {
+                  titulo: "Coleta 4",
+                  dados: "dados4 dados4 dados4 dados4 dados4 dados4 ",
+                  dataColeta: "10/11/2018",
+                }
+              ]
             },
             {
               nome: "Planta 2",

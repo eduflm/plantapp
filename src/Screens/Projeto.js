@@ -27,19 +27,6 @@ export default class Projeto extends Component {
     this.setState({option})
   }
 
-  // renderOption(){
-  //   const {option} = this.state
-  //   console.log("render", option)
-  //   switch(option) {
-  //     case 0:
-  //       return <DescricaoProjeto/>
-  //     case 1:
-  //       return <PessoasProjeto/>
-  //     default:
-  //       return null
-  //   }
-  // }
-
   render() {
     const id = this.props.navigation.getParam('id');
     const nome = this.props.navigation.getParam('nome');

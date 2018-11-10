@@ -9,8 +9,9 @@ export default class PlantasProjeto extends Component {
     this._onPressButton = this._onPressButton.bind(this)
   }
 
-  _onPressButton(){
-    this.props.navigation.navigate('Planta')
+  _onPressButton(planta){
+    console.log("planta", planta)
+    this.props.navigation.navigate('Planta', {planta})
   }
 
 
@@ -22,7 +23,7 @@ export default class PlantasProjeto extends Component {
         {plantas.map((planta) => (
           <View>
             <TouchableOpacity
-              onPress={this._onPressButton}
+              onPress={() => this._onPressButton(planta)}
               title={planta.nome}
               accessibilityLabel={planta.nome}
             >
