@@ -6,9 +6,9 @@ export default class DescricaoProjeto extends Component {
     const {descricao} = this.props
     return (
       <View>
-        <Text style={styles.title}> Descrição: </Text>
+        <Text style={styles.title}>Descrição</Text>
         <View style={styles.contentContainer}>
-          <Text> {descricao} </Text>
+          <Text style={ styles.desc }>{ descricao }</Text>
         </View>
       </View>
     )
@@ -20,9 +20,15 @@ const styles = StyleSheet.create({
     flex: 1
   },
   title: {
-    fontSize: 26
+    fontSize: 26,
+    textAlign: 'center',
+    fontWeight: '500',
+    fontFamily: 'serif'
   },
   contentContainer: {
     margin: 15
+  },
+  desc: {
+    fontSize: 15,
   }
 });
