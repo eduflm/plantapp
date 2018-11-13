@@ -1,8 +1,9 @@
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native'
+import { Platform, StyleSheet, Text, View, AsyncStorage } from 'react-native'
 import ListaProjetos from '../Components/ListaProjetos'
 import { FloatingAction } from 'react-native-floating-action';
+
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -10,9 +11,9 @@ export default class App extends Component<Props> {
     title: 'Projetos',
   };
 
-  constructor(props){
-    super(props)
 
+  constructor(props) {
+    super(props)
     this.state = {
       projetos: [
         {
@@ -81,25 +82,21 @@ export default class App extends Component<Props> {
           descricao: "",
           pessoas: [],
           plantas: []
-        }
-      ]
+        },
+      ],
     }
   }
 
   render() {
 
-    const {projetos} = this.state
+    let {projetos} = this.state
 
-    // let novoProjeto = this.props.navigation.getParam('novoProjeto');
-    // console.log(novoProjeto)
-    // if (novoProjeto){
-    //   let projetos = this.state.projetos
-    //   projetos.push(novoProjeto)
-    //   this.setState({
-    //     projetos
-    //   })
-    //   novoProjeto = null
-    // }
+    let novoProjeto = this.props.navigation.getParam('novoProjeto');
+    console.log(novoProjeto)
+    if (novoProjeto !== undefined){
+      projetos.push(novoProjeto)
+    }
+    
 
     const actions = [{
       text: 'Adicionar novo projeto',

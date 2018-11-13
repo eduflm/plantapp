@@ -37,7 +37,7 @@ export default class NovoProjeto extends Component {
     //   return
     // }
     
-    this.props.navigation.navigate('Projetos', {novoProjeto: {nome, descricao}})
+    this.props.navigation.navigate('Projetos', {novoProjeto: {id: 4, nome, descricao, pessoas: [], plantas: []}})
   }
 
   render() {
