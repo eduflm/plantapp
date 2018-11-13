@@ -9,13 +9,15 @@ import Projeto from './Screens/Projeto'
 import NovoProjeto from './Screens/NovoProjeto'
 import Planta from './Screens/Planta'
 import NovaPlanta from './Screens/NovaPlanta'
+import NovoHistorico from './Screens/NovoHistorico'
 
 const RootStack = createStackNavigator({
   Projetos: {screen: Projetos},
   Projeto: {screen: Projeto},
   NovoProjeto: {screen: NovoProjeto},
   Planta: {screen: Planta},
-  NovaPlanta: {screen: NovaPlanta}
+  NovaPlanta: {screen: NovaPlanta},
+  NovoHistorico: {screen: NovoHistorico}
 },{
     initialRouteName: 'Projetos',
     headerStyle: {

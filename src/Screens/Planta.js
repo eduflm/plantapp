@@ -40,7 +40,7 @@ export default class Planta extends Component {
         </View>
         <View style={styles.content}>
           {option === 1 ? (
-            <HistoricoPlanta coletas={planta.coletas}/>
+            <HistoricoPlanta coletas={planta.coletas} navigation={this.props.navigation}/>
           ):(
             <ScrollView style={styles.container}>
               <DescricaoPlanta planta={planta}/>
