@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
     borderColor: "blue",
     borderWidth: 0.5,
     borderRadius: 10,
-    height:70,
+    // height:70,
+    margin: 10,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start'
