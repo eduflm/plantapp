@@ -4,6 +4,7 @@ import OptionsProjetoButton from '../Components/OptionsProjetoButton';
 import DescricaoProjeto from '../Components/DescricaoProjeto';
 import PessoasProjeto from '../Components/PessoasProjeto';
 import PlantasProjeto from '../Components/PlantasProjeto';
+import { FloatingAction } from 'react-native-floating-action';
 
 
 export default class Projeto extends Component {
@@ -35,6 +36,14 @@ export default class Projeto extends Component {
     const plantas = this.props.navigation.getParam('plantas')
     const {option} = this.state
 
+    const actions = [{
+      text: 'Adicionar novo projeto',
+      name: 'bt_novo_projeto',
+      icon: require('../Assets/add1.png'),
+      position: 1,
+      size: 100
+    }];
+
     return (
       <View style={styles.container}>
         <View style={styles.containerBotaos}>
@@ -47,7 +56,18 @@ export default class Projeto extends Component {
         </View>
         <View style={styles.content}>
           {option === 1 ? (
-            <PlantasProjeto plantas={plantas} navigation={this.props.navigation}/>
+            <View style={styles.container}>
+              <PlantasProjeto plantas={plantas} navigation={this.props.navigation}/>
+              <FloatingAction
+                actions={actions}
+                overrideWithAction={true}
+                onPressItem={
+                  () => {
+                    this.props.navigation.navigate('NovaPlanta')
+                  }
+                }
+              />
+            </View>
           ):(
             <ScrollView style={styles.container}>
               <DescricaoProjeto descricao={descricao}/>
