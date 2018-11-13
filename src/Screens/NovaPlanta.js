@@ -39,7 +39,8 @@ export default class NovaPlanta extends Component {
     //   return
     // }
     
-    this.props.navigation.goBack()
+    this.props.navigation.navigate('Projeto', {novaPlanta: {nome, descricao, especie, primeiraColeta: "", ultimaColeta: "", coletas: []}})
+    // this.props.navigation.goBack()
   }
 
   render() {

@@ -33,7 +33,7 @@ export default class Projeto extends Component {
     const nome = this.props.navigation.getParam('nome');
     const descricao = this.props.navigation.getParam('descricao')
     const pessoas = this.props.navigation.getParam('pessoas')
-    const plantas = this.props.navigation.getParam('plantas')
+    let plantas = this.props.navigation.getParam('plantas')
     const {option} = this.state
 
     const actions = [{
@@ -44,6 +44,12 @@ export default class Projeto extends Component {
       size: 100
     }];
 
+    const teste = this.props.navigation.getParam('novaPlanta');
+    if(teste) {
+      plantas.push(teste)
+    }
+
+    console.log(plantas)
     return (
       <View style={styles.container}>
         <View style={styles.containerBotaos}>
