@@ -23,7 +23,7 @@ export default class NovaPlanta extends Component {
   }
 
   _onPressButton(){
-    const {nome,descricao, especie} = this.state
+    const {data, hora, altura, observacao} = this.state
     // if (nome === ""){
     //   Alert.alert(
     //     'Nome vazio',
@@ -40,7 +40,7 @@ export default class NovaPlanta extends Component {
     //   return
     // }
     
-    this.props.navigation.navigate('Planta')
+    this.props.navigation.navigate('Planta', {novoHistorico: {data, hora, altura, observacao}})
   }
 
   render() {

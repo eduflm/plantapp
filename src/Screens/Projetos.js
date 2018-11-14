@@ -42,23 +42,31 @@ export default class App extends Component<Props> {
               coletas: [
                 {
                   titulo: "Coleta 1",
-                  dados: "dados dados dados dados dados dados dados dados dados dados dados dados dados dados dados dados dados dados ",
-                  dataColeta: "10/11/2018",
+                  data: "10/11/2018",
+                  hora: "19:36h",
+                  altura: "30cm",
+                  observacao: "observacao da planta"
                 },
                 {
                   titulo: "Coleta 2",
-                  dados: "dados2 dados2 dados2 dados2 dados2 dados2 ",
-                  dataColeta: "10/11/2018",
+                  data: "10/11/2018",
+                  hora: "19:36h",
+                  altura: "30cm",
+                  observacao: "observacao da planta"
                 },
                 {
                   titulo: "Coleta 3",
-                  dados: "dados3 dados3 dados3 dados3 dados3 dados3 ",
-                  dataColeta: "10/11/2018",
+                  data: "10/11/2018",
+                  hora: "19:36h",
+                  altura: "30cm",
+                  observacao: "observacao da planta"
                 },
                 {
                   titulo: "Coleta 4",
-                  dados: "dados4 dados4 dados4 dados4 dados4 dados4 ",
-                  dataColeta: "10/11/2018",
+                  data: "10/11/2018",
+                  hora: "19:36h",
+                  altura: "30cm",
+                  observacao: "observacao da planta"
                 }
               ]
             },
