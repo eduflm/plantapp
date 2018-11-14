@@ -30,10 +30,13 @@ export default class Planta extends Component {
     let planta = this.props.navigation.getParam('planta');
     let novoHistorico = this.props.navigation.getParam('novoHistorico')
     if(novoHistorico) {
-      console.log(planta)
+      if (planta.coletas.length === 0){
+        planta.primeiraColeta = novoHistorico.data
+      }
       novoHistorico.titulo = "Coleta " + ((planta.coletas.length) + 1)
       planta.coletas.push(novoHistorico)    
       this.props.navigation.setParams({novoHistorico: null})
+      planta.ultimaColeta = novoHistorico.data
     }
 
     return (

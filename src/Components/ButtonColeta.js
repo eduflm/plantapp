@@ -96,15 +96,15 @@ const styles = StyleSheet.create({
   contentGathering: {
     marginLeft: 20,
     marginRight: 20,
-    marginBottom: 20
+    marginBottom: 20,
   },
   infoContainer: {
     flexDirection: "row",
     marginBottom: 10
   }, 
   contentDate: {
-    // marginTop: 5,
-    // marginLeft: 5
+    marginTop: 4,
+    marginLeft: 4
   }
 });
 
