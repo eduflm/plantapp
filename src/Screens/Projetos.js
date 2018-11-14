@@ -18,8 +18,8 @@ export default class App extends Component<Props> {
       projetos: [
         {
           id: 1,
-          nome: "Projeto 10",
-          descricao: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas odio ex, sagittis id finibus ut, blandit eget ante. Suspendisse enim erat, imperdiet sit amet accumsan sit amet, malesuada eu felis. Proin imperdiet felis vel hendrerit sollicitudin. Ut et est a ipsum posuere vulputate non vel nunc. Cras rutrum metus neque, quis tincidunt arcu posuere eu. Duis laoreet sapien tellus, at aliquam orci pulvinar sed. Nullam vitae ligula semper sem hendrerit finibus. Integer rhoncus rhoncus libero, eget vulputate ex mattis at. Praesent et dui a dui lacinia congue a at eros. Aenean fringilla et lacus at aliquet",
+          nome: "Abóboras Gigantes",
+          descricao: "Esse projeto tem como objetivo verificar o crescimento de abóboras em laboratório enquanto elas escutam múscias relaxantes",
           pessoas: [
             {
               nome: "Bárbara Almeida",
@@ -38,63 +38,110 @@ export default class App extends Component<Props> {
           ],
           plantas: [
             {
-              nome: "Planta 1",
-              descricao: "Uma planta bem loca",
-              especie: "Uma espécie qualquer",
+              nome: "Abóbora Clássica",
+              descricao: "Está abóbora está sendo criada som de Beethoven e Mozart",
+              especie: "Cucurbita",
               primeiraColeta: "30/10/2018",
-              ultimaColeta: "10/11/1997",
+              ultimaColeta: "14/11/2018",
               coletas: [
                 {
                   titulo: "Coleta 1",
-                  data: "10/11/2018",
-                  hora: "19:36h",
-                  altura: "30cm",
-                  observacao: "observacao da planta"
+                  data: "30/10/2018",
+                  hora: "14:40h",
+                  altura: "5cm",
+                  observacao: "Primeira coleta da planta clássica"
                 },
                 {
                   titulo: "Coleta 2",
-                  data: "10/11/2018",
-                  hora: "19:36h",
-                  altura: "30cm",
-                  observacao: "observacao da planta"
-                },
-                {
-                  titulo: "Coleta 3",
-                  data: "10/11/2018",
-                  hora: "19:36h",
-                  altura: "30cm",
-                  observacao: "observacao da planta"
-                },
-                {
-                  titulo: "Coleta 4",
-                  data: "10/11/2018",
-                  hora: "19:36h",
-                  altura: "30cm",
-                  observacao: "observacao da planta"
+                  data: "14/11/2018",
+                  hora: "15:15h",
+                  altura: "15cm",
+                  observacao: "É possível observar um grande crescimento da planta que estava ao som de músicas clássicas"
                 }
               ]
             },
             {
-              nome: "Planta 2",
-              descricao: "Uma planta mais loca ainda",
-              coletas: []
+              nome: "Abóbora Moderna",
+              descricao: "Essa planta foi criado ao som de múscias relaxantes modernas",
+              especie: "Cucurbita moschata",
+              primeiraColeta: "10/11/2018",
+              ultimaColeta: "10/11/2018",
+              coletas: [
+                {
+                  titulo: "Coleta 1",
+                  data: "10/11/2018",
+                  hora: "09:50h",
+                  altura: "5cm",
+                  observacao: "Primeira coleta da planta criada com música moderna"
+                }
+              ]
             }
           ]
         },
         {
           id: 2,
-          nome: "Projeto 6",
-          descricao: "",
-          pessoas: [],
-          plantas: []
-        },
-        {
-          id: 3,
-          nome: "Projeto 4",
-          descricao: "",
-          pessoas: [],
-          plantas: []
-        },
+          nome: "Mandiocas noturnas",
+          descricao: "Estudo de mandiocas criadas com pouca luz do sol",
+          pessoas: [
+            {
+              nome: "Ana Barbosa",
+              email: "ana@gmail.com",
+              imagem: "https://st2.depositphotos.com/1035122/10611/i/950/depositphotos_106118560-stock-photo-brunette-woman-student-hold-pack.jpg"
+            },{
+              nome: "Usuário",
+              email: "usuario@gmail.com",
+              imagem: "https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/user.png"
+            }
+          ],
+          plantas: [
+            {
+              nome: "Mandioca da madrugada",
+              descricao: "Essa mandioca está sendo criada na total escuridão",
+              especie: "Amarga",
+              primeiraColeta: "21/10/2018",
+              ultimaColeta: "01/11/2018",
+              coletas: [
+                {
+                  titulo: "Coleta 1",
+                  data: "30/10/2018",
+                  hora: "14:40h",
+                  altura: "5cm",
+                  observacao: "Primeira coleta da mandioca da madrugada"
+                },
+                {
+                  titulo: "Coleta 2",
+                  data: "01/11/2018",
+                  hora: "15:15h",
+                  altura: "2cm",
+                  observacao: "A espécie morreu"
+                }
+              ]
+            },
+            {
+              nome: "Mandioca lunar",
+              descricao: "Esta mandioca foi criada majoritariamente no escuro tendo poucos momentos de luz lunar ",
+              especie: "Brava",
+              primeiraColeta: "01/10/2018",
+              ultimaColeta: "12/10/2018",
+              coletas: [
+                {
+                  titulo: "Coleta 1",
+                  data: "01/10/2018",
+                  hora: "12:50h",
+                  altura: "5cm",
+                  observacao: "Primeira coleta da mandioca lunar"
+                },
+                {
+                  titulo: "Coleta 2",
+                  data: "12/10/2018",
+                  hora: "12:50h",
+                  altura: "6cm",
+                  observacao: "A planta continua viva mas não cresceu"
+                }
+              ]
+            }
+          ]
+        }
       ],
     }
   }
