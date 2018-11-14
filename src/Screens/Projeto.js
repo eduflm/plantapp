@@ -47,6 +47,7 @@ export default class Projeto extends Component {
     const teste = this.props.navigation.getParam('novaPlanta');
     if(teste) {
       plantas.push(teste)
+      this.props.navigation.setParams({novaPlanta: null})
     }
 
     console.log(plantas)

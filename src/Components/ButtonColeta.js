@@ -12,7 +12,7 @@ export default class ButtonColeta extends Component {
 
   render() {
     const {contentIsVisible} = this.state
-    const {titulo, dados, dataColeta} = this.props.coleta
+    const {titulo, data, hora, altura, observacao} = this.props.coleta
     return (
       <View style={styles.container}>
         <TouchableOpacity
@@ -36,12 +36,20 @@ export default class ButtonColeta extends Component {
         {contentIsVisible ? (
           <View style={styles.contentContainer}>
             <View style={styles.infoContainer}>
-              <Text style={styles.title}>Data da coleta: {dataColeta}</Text>
-              {/* <Text style={styles.contentDate}>{dataColeta}</Text> */}
+              <Text style={styles.title}>Data da coleta:</Text>
+              <Text style={styles.contentDate}>{data}</Text>
+            </View>
+            <View style={styles.infoContainer}>
+              <Text style={styles.title}>Hora da coleta:</Text>
+              <Text style={styles.contentDate}>{hora}</Text>
+            </View>
+            <View style={styles.infoContainer}>
+              <Text style={styles.title}>Altura da coleta:</Text>
+              <Text style={styles.contentDate}>{altura}</Text>
             </View>
             <View>
-              <Text style={styles.titleDados}>Dados</Text>
-              <Text style={styles.contentGathering}>{dados}</Text>
+              <Text style={styles.title}>Observação:</Text>
+              <Text style={styles.contentGathering}>{observacao}</Text>
             </View>
           </View>
         ): (

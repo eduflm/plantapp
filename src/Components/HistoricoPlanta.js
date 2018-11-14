@@ -4,6 +4,14 @@ import ButtonColeta from './ButtonColeta';
 import { FloatingAction } from 'react-native-floating-action';
 
 export default class HistoricoPlanta extends Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      recarrega: false
+    }
+  }
+
   _renderItem = ({item}) => {
     console.log(item)
     return (
@@ -13,8 +21,13 @@ export default class HistoricoPlanta extends Component {
 
   _keyExtractor = (item, index) => item.nome;
 
+  componentWillReceiveProps(){
+    this.setState({recarrega: !this.state.recarrega})
+  }
+
   render() {
     const {coletas} = this.props
+    const {recarrega} = this.state
 
     const actions = [{
       text: 'Adicionar novo projeto',
@@ -29,6 +42,7 @@ export default class HistoricoPlanta extends Component {
     return (
       <View style={styles.container}>
         <FlatList
+          extraData={recarrega}
           data={coletas}
           keyExtractor={this._keyExtractor}
           renderItem={this._renderItem}

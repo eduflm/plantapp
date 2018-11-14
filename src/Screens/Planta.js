@@ -27,7 +27,15 @@ export default class Planta extends Component {
 
   render() {
     const {option} = this.state
-    const planta = this.props.navigation.getParam('planta');
+    let planta = this.props.navigation.getParam('planta');
+    let novoHistorico = this.props.navigation.getParam('novoHistorico')
+    if(novoHistorico) {
+      console.log(planta)
+      novoHistorico.titulo = "Coleta " + ((planta.coletas.length) + 1)
+      planta.coletas.push(novoHistorico)    
+      this.props.navigation.setParams({novoHistorico: null})
+    }
+
     return (
       <View style={styles.container}>
         <View style={styles.containerBotaos}>
