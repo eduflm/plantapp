@@ -38,7 +38,11 @@ export default class NovoProjeto extends Component {
       return
     }
     
-    this.props.navigation.navigate('Projetos', {novoProjeto: {id: 4, nome, descricao, pessoas: [], plantas: []}})
+    this.props.navigation.navigate('Projetos', {novoProjeto: {id: 4, nome, descricao, pessoas: [{
+      nome: "Usuário",
+      email: "usuario@gmail.com",
+      imagem: "https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/user.png"
+    }], plantas: []}})
   }
 
   render() {
@@ -47,15 +51,15 @@ export default class NovoProjeto extends Component {
         <KeyboardAwareScrollView>
           <View>
             <CustomInput
-              label={"Nome do projeto: "}
+              label={"Nome do projeto"}
               onChangeText={(nome) => this.setState({nome})}
               value={this.state.nome}
               placeholder="Digite aqui o nome do projeto"
             />
             <CustomInput
-              label={"Descrição do projeto: "}
+              label={"Descrição do projeto"}
               multiline = {true}
-              numberOfLines = {6}
+              numberOfLines = {3}
               onChangeText={(descricao) => this.setState({descricao})}
               value={this.state.descricao}
               placeholder="Digite aqui a descrição do projeto"

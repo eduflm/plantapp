@@ -29,10 +29,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   button: {
-    backgroundColor: 'blue',
-    // borderColor: "blue",
-    borderWidth: 0.5,
-    borderRadius: 3,
+    backgroundColor: '#428BCA',
+    //borderWidth: 0.5,
+    //borderRadius: 3,
     height:70,
     flexDirection: 'row',
     justifyContent: 'center',
@@ -40,6 +39,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     padding: 20,
-    color: 'white'
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '500'
   }
 });

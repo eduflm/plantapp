@@ -23,22 +23,30 @@ export default class NovaPlanta extends Component {
 
   _onPressButton(){
     const {nome,descricao, especie} = this.state
-    // if (nome === ""){
-    //   Alert.alert(
-    //     'Nome vazio',
-    //     'O campo "nome do projeto" não pode estar vazio',
-    //   )
-    //   return
-    // }
+    if (nome === ""){
+      Alert.alert(
+        'Nome vazio',
+        'O campo "nome da planta" não pode estar vazio',
+      )
+      return
+    }
 
-    // if (descricao === ""){
-    //   Alert.alert(
-    //     'Descrição vazia',
-    //     'O campo "Descrição do projeto" não pode estar vazio',
-    //   )
-    //   return
-    // }
-    
+    if (descricao === ""){
+      Alert.alert(
+        'Descrição vazia',
+        'O campo "Descrição da planta" não pode estar vazio',
+      )
+      return
+    }
+
+    if (especie === ""){
+      Alert.alert(
+        'Espécie vazia',
+        'O campo "Espécie da planta" não pode estar vazio',
+      )
+      return
+    }
+  
     this.props.navigation.navigate('Projeto', {novaPlanta: {nome, descricao, especie, primeiraColeta: "", ultimaColeta: "", coletas: []}})
     // this.props.navigation.goBack()
   }
@@ -50,21 +58,21 @@ export default class NovaPlanta extends Component {
         <KeyboardAwareScrollView>
           <View>
             <CustomInput
-              label={"Nome do planta: "}
+              label={"Nome do planta"}
               onChangeText={(nome) => this.setState({nome})}
               value={this.state.nome}
               placeholder="Digite aqui o nome da planta"
             />
             <CustomInput
               multiline = {true}
-              numberOfLines = {6}
-              label={"Descrição da planta: "}
+              numberOfLines = {3}
+              label={"Descrição da planta"}
               onChangeText={(descricao) => this.setState({descricao})}
               value={this.state.descricao}
               placeholder="Digite aqui a descrição da planta"
             />
             <CustomInput
-              label={"Espécie: "}
+              label={"Espécie"}
               onChangeText={(especie) => this.setState({especie})}
               value={this.state.especie}
               placeholder="Digite aqui a espécie da planta"
@@ -89,5 +97,4 @@ const styles = StyleSheet.create({
     width: "100%",
     bottom: 0,
   }
- 
 });

@@ -23,13 +23,18 @@ const styles = StyleSheet.create({
   input: {
     height: 40, 
     borderColor: '#232323', 
-    borderWidth: 0.2,
-    borderRadius: 5
+    // borderWidth: 0.2,
+    // borderRadius: 5,
+    borderBottomWidth: 1,
+    backgroundColor: '#d9d9d9',
+    borderTopLeftRadius: 7,
+    borderTopRightRadius: 7,
   },
   inputMultiline: {
-    borderColor: '#232323', 
-    borderWidth: 0.2,
-    borderRadius: 5,
-    borderBottomWidth: 1
+    borderColor: '#232323',
+    backgroundColor: '#d9d9d9',
+    borderBottomWidth: 1,
+    borderTopLeftRadius: 7,
+    borderTopRightRadius: 7,
   }
 });

@@ -30,6 +30,10 @@ export default class App extends Component<Props> {
               nome: "Ana Barbosa",
               email: "ana@gmail.com",
               imagem: "https://st2.depositphotos.com/1035122/10611/i/950/depositphotos_106118560-stock-photo-brunette-woman-student-hold-pack.jpg"
+            },{
+              nome: "Usuário",
+              email: "usuario@gmail.com",
+              imagem: "https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/user.png"
             }
           ],
           plantas: [

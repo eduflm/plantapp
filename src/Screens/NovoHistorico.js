@@ -24,21 +24,37 @@ export default class NovaPlanta extends Component {
 
   _onPressButton(){
     const {data, hora, altura, observacao} = this.state
-    // if (nome === ""){
-    //   Alert.alert(
-    //     'Nome vazio',
-    //     'O campo "nome do projeto" não pode estar vazio',
-    //   )
-    //   return
-    // }
+    if (data === ""){
+      Alert.alert(
+        'Data inválida',
+        'O campo "data da coleta" não pode estar vazio',
+      )
+      return
+    }
 
-    // if (descricao === ""){
-    //   Alert.alert(
-    //     'Descrição vazia',
-    //     'O campo "Descrição do projeto" não pode estar vazio',
-    //   )
-    //   return
-    // }
+    if (hora === ""){
+      Alert.alert(
+        'Hora inválida',
+        'O campo "Hora da coleta" não pode estar vazio',
+      )
+      return
+    }
+
+    if (altura === ""){
+      Alert.alert(
+        'Altura inválida',
+        'O campo "Altura da coleta" não pode estar vazio',
+      )
+      return
+    }
+
+    if (observacao === ""){
+      Alert.alert(
+        'Observação inválida',
+        'O campo "Observação da coleta" não pode estar vazio',
+      )
+      return
+    }
     
     this.props.navigation.navigate('Planta', {novoHistorico: {data, hora, altura, observacao}})
   }
@@ -50,27 +66,27 @@ export default class NovaPlanta extends Component {
         <KeyboardAwareScrollView>
           <View>
             <CustomInput
-              label={"Data: "}
+              label={"Data"}
               onChangeText={(data) => this.setState({data})}
               value={this.state.data}
               placeholder="Digite aqui a data da coleta"
             />
             <CustomInput
-              label={"Hora: "}
+              label={"Hora"}
               onChangeText={(hora) => this.setState({hora})}
               value={this.state.hora}
               placeholder="Digite aqui a hora da coleta"
             />
             <CustomInput
-              label={"Altura da planta: "}
+              label={"Altura da planta"}
               onChangeText={(altura) => this.setState({altura})}
               value={this.state.altura}
               placeholder="Digite aqui a altura da planta durante a coleta"
             />
             <CustomInput
               multiline = {true}
-              numberOfLines = {6}
-              label={"Observações: "}
+              numberOfLines = {3}
+              label={"Observações"}
               onChangeText={(observacao) => this.setState({observacao})}
               value={this.state.observacao}
               placeholder="Digite aqui alguma observação sobre a coleta"

@@ -43,10 +43,10 @@ export default class Planta extends Component {
       <View style={styles.container}>
         <View style={styles.containerBotaos}>
           <View style={styles.containerBotao}>
-            <OptionsProjetoButton nome="Descricao" option={0} onClick={this.onClickOption} activated={option === 0}/>
+            <OptionsProjetoButton nome="Descrição" option={0} onClick={this.onClickOption} activated={option === 0}/>
           </View>
           <View style={styles.containerBotao}>
-            <OptionsProjetoButton nome="Histórico" option={1} onClick={this.onClickOption} activated={option === 1}/>
+            <OptionsProjetoButton nome="Coleta" option={1} onClick={this.onClickOption} activated={option === 1}/>
           </View>
         </View>
         <View style={styles.content}>

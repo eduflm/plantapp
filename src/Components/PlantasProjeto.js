@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
   },
   plantaNome: {
     fontSize: 20,
-    marginLeft: 20
+    marginLeft: 20,
+    color: '#428BCA'
   }
 });
