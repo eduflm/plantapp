@@ -14,10 +14,10 @@ export default class CardPessoas extends Component {
         </View>
         <View style={styles.textContainer}>
           <View style={styles.nameContainer} >
-            <Text style={styles.nome}> {nome} </Text>
+            <Text style={styles.nome}>{ nome }</Text>
           </View>
           <View style={styles.emailContainer} >
-            <Text style={styles.email}> {email} </Text>
+            <Text style={styles.email}>{ email }</Text>
           </View>
         </View>
       </View>
@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderColor: "#dddddd",
     borderWidth: 0.5,
-    marginBottom: 5
+    marginBottom: 5,
+    borderRadius: 10,
   },
   avatarContainer: {
     marginLeft: 20,
@@ -41,23 +42,23 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     justifyContent: 'center',
+    marginLeft: 25
   },
   nameContainer: {
     justifyContent: 'center',
-    marginLeft: 20
   },
   emailContainer: {
     justifyContent: 'center',
-    marginLeft: 20
   },
   nome: {
-    fontSize: 18
+    fontSize: 18,
+    fontWeight: '500'
   },
   avatar: {
     width: 55, 
     height: 55,
     borderRadius: 50,
     borderColor: 'black'
-  },
+  }
 });
 

@@ -77,7 +77,7 @@ export default class Projeto extends Component {
             </View>
           ):(
             <ScrollView style={styles.container}>
-              <DescricaoProjeto descricao={descricao}/>
+              <DescricaoProjeto descricao={descricao} style={ styles.descProj }/>
               <PessoasProjeto pessoas={pessoas}/>
             </ScrollView>
           )}
@@ -101,6 +101,9 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     margin: 20
+  },
+  descProj: {
+    
   }
 });
 

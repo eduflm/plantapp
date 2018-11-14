@@ -23,7 +23,7 @@ export default class ButtonColeta extends Component {
           accessibilityLabel={"Botão expansível"}
         >
           <View style={styles.label}>
-            <Text style={styles.text}> {titulo} </Text>
+            <Text style={styles.text}>{titulo}</Text>
             <View style={styles.iconContainer}>
               {contentIsVisible ? (
                 <Image style={styles.icons} source={require('../Assets/arrow_up.png')} />
@@ -71,30 +71,40 @@ const styles = StyleSheet.create({
     backgroundColor: "white"
   },
   text: {
-    margin: 20
+    margin: 20,
+    fontSize: 20,
+    fontWeight: '500',
   },
   iconContainer: {
     justifyContent: "center"
   },
   contentContainer: {
     backgroundColor: "white",
+    paddingTop: 20,
+    borderTopWidth: 0.5
   },
   title: {
-    fontSize: 20,
+    fontSize: 18,
     marginLeft: 20,
     marginBottom: 10
   },
+  titleDados: {
+    fontSize: 18,
+    marginBottom: 10,
+    textAlign: 'center'
+  },
   contentGathering: {
     marginLeft: 20,
+    marginRight: 20,
     marginBottom: 20
   },
   infoContainer: {
     flexDirection: "row",
-    marginBottom: 20
+    marginBottom: 10
   }, 
   contentDate: {
-    marginTop: 5,
-    marginLeft: 5
+    // marginTop: 5,
+    // marginLeft: 5
   }
 });
 

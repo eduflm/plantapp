@@ -19,7 +19,7 @@ export default class PlantasProjeto extends Component {
     const {plantas} = this.props
     return (
       <View style={styles.container}>
-        <Text style={styles.title}> Plantas: </Text>
+        <Text style={styles.title}>Plantas</Text>
         {plantas.map((planta) => (
           <View>
             <TouchableOpacity
@@ -44,12 +44,15 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 26,
-    marginBottom: 5
+    textAlign: 'center',
+    fontWeight: '500',
+    fontFamily: 'serif',
+    marginBottom: 20
   },
   containerBotaoPlanta: {
     justifyContent: 'center',
-    marginBottom: 5,
-    height:40,
+    marginBottom: 10,
+    height: 40,
   },
   plantaNome: {
     fontSize: 20,

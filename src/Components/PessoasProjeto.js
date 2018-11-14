@@ -7,7 +7,7 @@ export default class PessoasProjeto extends Component {
     const {pessoas} = this.props
     return (
       <View style={styles.container}>
-        <Text style={styles.title}> Pessoas: </Text>
+        <Text style={styles.title}>Pessoas</Text>
         {pessoas.map((pessoa) => (
           <CardPessoas nome={pessoa.nome} imagem={pessoa.imagem} email={pessoa.email}/>
         ))}
@@ -19,9 +19,13 @@ export default class PessoasProjeto extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: 25
   },
   title: {
     fontSize: 26,
-    marginBottom: 5
+    textAlign: 'center',
+    fontWeight: '500',
+    fontFamily: 'serif',
+    marginBottom: 15
   },
 });

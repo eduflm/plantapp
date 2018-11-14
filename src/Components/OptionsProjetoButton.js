@@ -36,12 +36,12 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     padding: 20,
-    color: 'blue',
+    color: '#428BCA',
   },
   buttonTextActivated: {
     padding: 5,
-    color: 'blue',
-    borderBottomColor: 'red',
+    color: '#428BCA',
+    borderBottomColor: 'gray',
     borderBottomWidth: 2,
   },
 });
