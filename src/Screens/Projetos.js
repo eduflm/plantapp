@@ -49,6 +49,7 @@ export default class App extends Component<Props> {
                   data: "30/10/2018",
                   hora: "14:40h",
                   altura: "5cm",
+                  quantidadeFrutos: "5",
                   observacao: "Primeira coleta da planta clássica"
                 },
                 {
@@ -56,6 +57,7 @@ export default class App extends Component<Props> {
                   data: "14/11/2018",
                   hora: "15:15h",
                   altura: "15cm",
+                  quantidadeFrutos: "10",
                   observacao: "É possível observar um grande crescimento da planta que estava ao som de músicas clássicas"
                 }
               ]
@@ -72,6 +74,7 @@ export default class App extends Component<Props> {
                   data: "10/11/2018",
                   hora: "09:50h",
                   altura: "5cm",
+                  quantidadeFrutos: "2",
                   observacao: "Primeira coleta da planta criada com música moderna"
                 }
               ]
@@ -106,6 +109,7 @@ export default class App extends Component<Props> {
                   data: "30/10/2018",
                   hora: "14:40h",
                   altura: "5cm",
+                  quantidadeFrutos: "4",
                   observacao: "Primeira coleta da mandioca da madrugada"
                 },
                 {
@@ -113,6 +117,7 @@ export default class App extends Component<Props> {
                   data: "01/11/2018",
                   hora: "15:15h",
                   altura: "2cm",
+                  quantidadeFrutos: "3",
                   observacao: "A espécie morreu"
                 }
               ]
@@ -129,6 +134,7 @@ export default class App extends Component<Props> {
                   data: "01/10/2018",
                   hora: "12:50h",
                   altura: "5cm",
+                  quantidadeFrutos: "9",
                   observacao: "Primeira coleta da mandioca lunar"
                 },
                 {
@@ -136,6 +142,7 @@ export default class App extends Component<Props> {
                   data: "12/10/2018",
                   hora: "12:50h",
                   altura: "6cm",
+                  quantidadeFrutos: "6",
                   observacao: "A planta continua viva mas não cresceu"
                 }
               ]

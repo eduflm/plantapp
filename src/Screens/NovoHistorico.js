@@ -17,6 +17,7 @@ export default class NovaPlanta extends Component {
       hora: '',
       altura: '',
       medida: 'mm',
+      quantidadeFrutos: 0,
       observacao: '',
     }
 
@@ -24,7 +25,7 @@ export default class NovaPlanta extends Component {
   }
 
   _onPressButton(){
-    const {data, hora, altura, observacao, medida} = this.state
+    const {data, hora, altura, observacao,quantidadeFrutos, medida} = this.state
     if (data === ""){
       Alert.alert(
         'Data inválida',
@@ -59,7 +60,7 @@ export default class NovaPlanta extends Component {
 
     let finalAltura = altura + medida
     
-    this.props.navigation.navigate('Planta', {novoHistorico: {data, hora, altura: finalAltura, observacao}})
+    this.props.navigation.navigate('Planta', {novoHistorico: {data, hora, altura: finalAltura, quantidadeFrutos, observacao}})
   }
 
   changeValue = (medida) => {
@@ -105,6 +106,13 @@ export default class NovaPlanta extends Component {
                 </Picker>
               </View>
             </View>
+            <CustomInput
+              label={"Quantidade de frutos"}
+              keyboardType="numeric"
+              onChangeText={(quantidadeFrutos) => this.setState({quantidadeFrutos})}
+              value={this.state.quantidadeFrutos}
+              placeholder="Digite aqui a quantidade de frutos coletados"
+            />
             <CustomInput
               multiline = {true}
               numberOfLines = {3}
