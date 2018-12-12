@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, Alert,KeyboardAvoidingView, Picker } from 'react-native'
+import { Text, View, StyleSheet, Alert,KeyboardAvoidingView, Picker, DatePickerAndroid, TimePickerAndroid, Keyboard } from 'react-native'
 import CustomInput from '../Components/CustomInput';
 import CustomButton from '../Components/CustomButtom';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
@@ -50,14 +50,6 @@ export default class NovaPlanta extends Component {
       return
     }
 
-    if (observacao === ""){
-      Alert.alert(
-        'Observação inválida',
-        'O campo "Observação da coleta" não pode estar vazio',
-      )
-      return
-    }
-
     let finalAltura = altura + medida
     
     this.props.navigation.navigate('Planta', {novoHistorico: {data, hora, altura: finalAltura, quantidadeFrutos, observacao}})
@@ -65,6 +57,42 @@ export default class NovaPlanta extends Component {
 
   changeValue = (medida) => {
     this.setState({medida})
+  }
+
+  selectDate = async () => {
+    Keyboard.dismiss()
+    try {
+      const {action, year, month, day} = await DatePickerAndroid.open({
+        date: new Date()
+      });
+      if (action !== DatePickerAndroid.dismissedAction) {
+        monthPlusOne = month + 1
+        let dia = day < 10 ? 0+String(day) : day
+        let mes = monthPlusOne < 10 ? 0+String(monthPlusOne) : monthPlusOne
+        data = `${dia}/${mes}/${year}`
+        this.setState({data})
+        // Selected year, month (0-11), day
+      }
+    } catch ({code, message}) {
+      console.warn('Cannot open date picker', message);
+    }
+  }
+
+  selectHour = async () => {
+    Keyboard.dismiss()
+    try {
+      const {action, hour, minute} = await TimePickerAndroid.open({
+        hour: 14,
+        minute: 0,
+        is24Hour: true, // Will display '2 PM'
+      });
+      if (action !== TimePickerAndroid.dismissedAction) {
+        let hora = `${hour}:${minute}`
+        this.setState({hora})
+      }
+    } catch ({code, message}) {
+      console.warn('Cannot open time picker', message);
+    }
   }
 
   render() {
@@ -75,13 +103,13 @@ export default class NovaPlanta extends Component {
           <View>
             <CustomInput
               label={"Data"}
-              onChangeText={(data) => this.setState({data})}
+              onFocus={this.selectDate}
               value={this.state.data}
               placeholder="Digite aqui a data da coleta"
             />
             <CustomInput
               label={"Hora"}
-              onChangeText={(hora) => this.setState({hora})}
+              onFocus={this.selectHour}
               value={this.state.hora}
               placeholder="Digite aqui a hora da coleta"
             />
