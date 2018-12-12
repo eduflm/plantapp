@@ -14,7 +14,7 @@ export default class Planta extends Component {
     super(props)
 
     this.state = {
-      option: 0
+      option: 1
     }
 
     this.onClickOption = this.onClickOption.bind(this)
